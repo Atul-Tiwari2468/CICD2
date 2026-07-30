@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Atul's portfolio — thoughtful digital products, built with care.">
+  <meta name="theme-color" content="#0D0D0D">
+  <title>{% block title %}Atul — Building for the web{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="page-loader" aria-hidden="true"><span></span></div>
+  {% include 'partials/icons.html' %}
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="{{ url_for('home') }}" aria-label="Atul home">A<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu"><span class="sr-only">Toggle navigation</span><span></span><span></span></button>
+      <div class="nav-links" id="site-menu">
+        <a href="{{ url_for('home') }}" {% if request.endpoint == 'home' %}aria-current="page"{% endif %}>Home</a>
+        <a href="{{ url_for('about') }}" {% if request.endpoint == 'about' %}aria-current="page"{% endif %}>About</a>
+        <a href="{{ url_for('projects') }}" {% if request.endpoint == 'projects' %}aria-current="page"{% endif %}>Projects</a>
+        <a class="nav-contact" href="{{ url_for('contact') }}" {% if request.endpoint == 'contact' %}aria-current="page"{% endif %}>Let’s talk <svg aria-hidden="true"><use href="#arrow-up-right"></use></svg></a>
+      </div>
+    </nav>
+  </header>
+  <main id="main-content">{% block content %}{% endblock %}</main>
+  <footer class="site-footer shell"><p>© <span data-year></span> Atul. Built with Flask.</p><a href="#main-content">Back to top <svg aria-hidden="true"><use href="#arrow-up"></use></svg></a></footer>
+  <button class="scroll-top" type="button" aria-label="Scroll to top"><svg aria-hidden="true"><use href="#arrow-up"></use></svg></button>
+  <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+</body>
+</html>

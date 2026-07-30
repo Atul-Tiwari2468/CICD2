@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}Projects — Atul{% endblock %}
+{% block content %}
+<section class="page-intro shell"><p class="eyebrow">Projects / 02</p><h1>Selected things I’ve built and am <em>building.</em></h1></section>
+<section class="project-list shell" aria-label="Projects"><article class="project-row reveal"><div class="project-index">01</div><div><p class="project-type">Flask / DevOps</p><h2>Basic Flask App</h2><p>A containerized Flask application with automated GitHub Actions delivery and a production Render deployment.</p><div class="tag-list"><span>Flask</span><span>Docker</span><span>GitHub Actions</span><span>Render</span></div></div><a href="{{ url_for('home') }}" aria-label="View Basic Flask App" class="round-link"><svg aria-hidden="true"><use href="#arrow-up-right"></use></svg></a></article><article class="project-row reveal"><div class="project-index">02</div><div><p class="project-type">In progress</p><h2>More to come</h2><p>New experiments and products will appear here as they take shape.</p><div class="tag-list"><span>Exploration</span><span>Craft</span></div></div><span class="round-link muted" aria-hidden="true"><svg><use href="#sparkle"></use></svg></span></article></section>
+{% endblock %}
